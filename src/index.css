@@ -1,13 +1,135 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --bg-light: #faf7f0;
+  --accent-beige: #d8d2c2;
+  --accent-main: #b17457;
+  --text-dark: #4a4947;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+}
+
+header,
+.header {
+  background-color: var(--accent-main);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #fff;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #fff;
+  flex: 1;
+}
+
+.book-now-button {
+  background-color: #fff;
+  color: var(--accent-main);
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+.book-now-button:hover {
+  background-color: var(--accent-beige);
+  border-color: var(--accent-main);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.book-now-button:focus {
+  outline: none;
+  border-color: #a35a3c;
+  box-shadow: 0 0 0 3px rgba(177, 116, 87, 0.4);
+}
+
+.book-now-button:active {
+  background-color: #e5b39b;
+  transform: scale(0.97);
+}
+
+main {
+  padding: 24px;
+}
+
+section {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.home {
+  background-color: var(--accent-beige);
+  padding: 40px 20px;
+  border-radius: 12px;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: var(--text-dark);
+}
+
+.contact button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: var(--accent-main);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+  background-color: #a35a3c;
+}
+
+footer {
+  background-color: var(--text-dark);
+  color: white;
+  text-align: center;
+  padding: 16px;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .book-now-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact form {
+    padding: 0 16px;
+  }
 }

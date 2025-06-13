@@ -1,6 +1,6 @@
 :root {
-  --bg-light: #2a8673;
-  --accent-beige: #18918d;
+  --bg-light: #8a8366;
+  --accent-beige: #97c898;
   --accent-main: #2d2c2b;
   --text-dark: #4a4947;
 }
@@ -63,7 +63,7 @@ header,
 }
 
 .book-now-button:active {
-  background-color: #2b706c;
+  background-color: #e5b39b;
   transform: scale(0.97);
 }
 

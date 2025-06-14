@@ -4,10 +4,9 @@ const About = () => (
   <section className="about" id="about">
     <h2>About Erman</h2>
     <p>
-    Erman’s Mobile Massage provides expert deep tissue, sports, 
-    myofacial, lymphatic and neuromuscular massage therapy, 
-    delivered directly to your home or office—offering relief, 
-    recovery, and results for busy professionals and active individuals.
+    Erman’s Mobile Massage brings expert deep tissue, sports, 
+    myofacial, lymphatic, and neuromuscular massage therapy directly to you. Providing relief, 
+    recovery, and results for busy professionals and active individuals in east TN for over 10 years.
     </p>
   </section>
 );

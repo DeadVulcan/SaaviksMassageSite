@@ -1,85 +1,85 @@
 :root {
-  --bg-light: #F9F6F1;
-  --accent-beige:#C5A46D;
-  --accent-main: #8D9A5B;
-  --text-dark: #3C2F2F;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  --bg-light: #F5F1EA;
+  --primary: #DCC9A6; /* Warm Sand */
+  --accent: #CBA135;  /* Luxury Gold */
+  --secondary: #7C6A4D; /* Earth Brown */
+  --text-dark: #333333;
+  --text-light: #FFFFFF;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --border-radius: 12px;
 }
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", sans-serif;
-  color: var(--text-dark);
+  font-family: 'Helvetica Neue', sans-serif;
   background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-header,
-.header {
-  background-color: var(--accent-main);
-  padding: 16px 24px;
+header, .header {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  padding: 20px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  color: #fff;
+  color: var(--text-light);
+  box-shadow: var(--shadow);
 }
 
 .header h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 0;
-  color: #fff;
   flex: 1;
 }
 
 .book-now-button {
-  background-color: #fff;
-  color: var(--accent-main);
-  font-weight: bold;
-  font-size: 16px;
+  background-color: var(--accent);
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 1rem;
   text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: 2px solid transparent;
+  padding: 14px 28px;
+  border-radius: var(--border-radius);
+  border: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  white-space: nowrap;
-  margin-left: auto;
+  box-shadow: var(--shadow);
 }
 
 .book-now-button:hover {
-  background-color: var(--accent-beige);
-  border-color: var(--accent-main);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-.book-now-button:focus {
-  outline: none;
-  border-color: #a35a3c;
-  box-shadow: 0 0 0 3px rgba(177, 116, 87, 0.4);
-}
-
-.book-now-button:active {
-  background-color: #1e8736;
-  transform: scale(0.97);
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
 
 main {
-  padding: 24px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 section {
-  margin-bottom: 48px;
+  margin-bottom: 80px;
   text-align: center;
 }
 
 .home {
-  background-color: var(--accent-beige);
-  padding: 40px 20px;
-  border-radius: 12px;
+  background-color: var(--primary);
+  padding: 60px 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.home h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.home p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: auto;
 }
 
 .contact form {
@@ -87,49 +87,34 @@ section {
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .contact input,
 .contact textarea {
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 6px;
+  padding: 16px;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
   border: 1px solid #ccc;
   background-color: #fff;
   color: var(--text-dark);
+  box-shadow: var(--shadow);
 }
 
 .contact button {
-  padding: 12px;
-  font-size: 16px;
-  background-color: var(--accent-main);
-  color: white;
+  padding: 16px;
+  font-size: 1rem;
+  background-color: var(--accent);
+  color: var(--text-light);
   border: none;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
 }
 
 .contact button:hover {
-  background-color: #a35a3c;
-}
-
-footer {
-  background-color: var(--text-dark);
-  color: white;
-  text-align: center;
-  padding: 16px;
-  font-size: 14px;
-}
-
-@media (max-width: 600px) {
-  .book-now-button {
-    width: 100%;
-    text-align: center;
-  }
-
-  .contact form {
-    padding: 0 16px;
-  }
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }

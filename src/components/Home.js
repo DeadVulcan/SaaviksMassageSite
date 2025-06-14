@@ -3,7 +3,7 @@ import React from "react";
 const Home = () => (
   <section className="home">
     <h2>Professional Care, Right at Home</h2>
-    <p>Professional massage therapy brought directly to your home or office.</p>
+    <p>Relax, Recover, and Feel Better — No Traffic, Only Tranquility</p>
   </section>
 );
 

@@ -1,3 +1,4 @@
+import Services from './components/Services';
 import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <main>
         <Home />
+        <Services />
         <About />
       </main>
       <Footer />

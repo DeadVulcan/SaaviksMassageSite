@@ -1,9 +1,9 @@
 :root {
-  --bg-light: #F5F1EA;
-  --primary: #DCC9A6; /* Warm Sand */
-  --accent: #CBA135;  /* Luxury Gold */
-  --secondary: #7C6A4D; /* Earth Brown */
-  --text-dark: #333333;
+  --bg-light: #FAF3E0;
+  --primary: #D4B483;
+  --accent: #A47148;
+  --secondary: #5A3E36;
+  --text-dark: #3C2F2F;
   --text-light: #FFFFFF;
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   --border-radius: 12px;

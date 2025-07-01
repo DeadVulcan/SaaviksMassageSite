@@ -6,6 +6,7 @@ const Footer = () => (
       &copy; {new Date().getFullYear()} Erman's Mobile Massage. All rights
       reserved.
     </p>
+    <span className="footer-signature">Saavik Erman, LMT</span>
   </footer>
 );
 

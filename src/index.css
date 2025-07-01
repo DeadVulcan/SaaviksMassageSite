@@ -119,3 +119,18 @@ section {
   transform: translateY(-2px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
+
+.footer {
+  background-color: var(--secondary);
+  color: var(--text-light);
+  padding: 16px 24px;
+  display: flex;              /* enable side-by-side layout */
+  justify-content: space-between; /* left & right alignment */
+  align-items: center;
+  flex-wrap: wrap;            /* keep it tidy on small screens */
+}
+
+.footer-signature {
+  font-weight: 600;
+  opacity: 0.9;
+}

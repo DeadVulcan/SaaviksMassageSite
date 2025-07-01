@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.booking-instructions {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: var(--text-light);
+  opacity: 0.85;
+}
+
+/* optional small-screen tweak */
+@media (max-width: 480px) {
+  .booking-instructions {
+    font-size: 0.9rem;
+    text-align: left;
+    max-width: 180px;      /* prevent wrapping too wide */
+  }
+}

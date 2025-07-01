@@ -1,4 +1,5 @@
 import React from "react";
+import BookingInstructions from "./BookingInstructions";
 
 const Header = () => (
   <header className="header">
@@ -12,6 +13,8 @@ const Header = () => (
       >
         Book Now
       </a>
+      
+      <BookingInstructions />
     </nav>
   </header>
 );

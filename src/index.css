@@ -19,7 +19,7 @@ body {
 
 header, .header {
   background: linear-gradient(90deg, var(--primary), var(--accent));
-  padding: 20px 32px;
+  padding: 25px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,7 +29,7 @@ header, .header {
 }
 
 .header h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   margin: 0;
   flex: 1;
 }

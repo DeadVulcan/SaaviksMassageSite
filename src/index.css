@@ -32,7 +32,8 @@ header, .header {
   font-size: 4.5rem;
   margin: 0;
   flex: 1;
-  font-family: "Tangerine", cursive;
+  font-family: "Italianno", cursive;
+  font-weight: 500;
 }
 
 .book-now-button {

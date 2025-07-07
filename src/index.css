@@ -26,6 +26,7 @@ header, .header {
   flex-wrap: wrap;
   color: var(--text-light);
   box-shadow: var(--shadow);
+  margin-bottom: 24px;
 }
 
 .header h1 {
@@ -56,9 +57,7 @@ header, .header {
 }
 
 main {
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: auto;
+
 }
 
 section {
@@ -71,6 +70,9 @@ section {
   padding: 60px 20px;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .home h2 {

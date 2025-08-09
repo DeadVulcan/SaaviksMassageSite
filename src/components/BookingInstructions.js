@@ -2,7 +2,7 @@ import React from "react";
 
 const BookingInstructions = () => (
   <p className="booking-instructions">
-    Please include your address information in "comments".
+    If booking an in-home service,please include your address information.
   </p>
 );
 

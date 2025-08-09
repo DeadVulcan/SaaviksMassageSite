@@ -3,7 +3,7 @@ import BookingInstructions from "./BookingInstructions";
 
 const Header = () => (
   <header className="header" data-aos="zoom-in">
-    <h1>Erman's Mobile Massage</h1>
+    <h1>Maryville Massage Works</h1>
     <nav>
       <a
         className="book-now-button"

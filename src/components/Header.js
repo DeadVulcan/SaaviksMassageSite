@@ -7,7 +7,7 @@ const Header = () => (
     <nav>
       <a
         className="book-now-button"
-        href="https://ermansmobilemassage.setmore.com/saavik"
+        href="https://maryvillemassageworks.setmore.com/saavik"
         target="_blank"
         rel="noopener noreferrer"
       >

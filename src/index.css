@@ -1,8 +1,8 @@
 :root {
-  --bg-light: #FAF3E0;
-  --primary: #D4B483;
-  --accent: #715637;
-  --secondary: #5a9646;
+  --bg-light: #caf5d2;
+  --primary: #58b48e;
+  --accent: #438992;
+  --secondary: #53b86b;
   --text-dark: #3C2F2F;
   --text-light: #FFFFFF;
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -120,7 +120,7 @@ section {
 .contact button:hover {
   background-color: var(--secondary);
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .footer {

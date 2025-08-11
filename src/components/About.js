@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => (
   <section className="about" id="about">
-    <h2>About Saavik Erman, LMT</h2>
+    <h2>About</h2>
     <p>
     Maryville Massage Works offers expert deep tissue, sports, myofascial, lymphatic, relaxation, and 
     neuromuscular massage therapy — now available both at our convenient Maryville location 

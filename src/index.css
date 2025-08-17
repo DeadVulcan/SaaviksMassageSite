@@ -39,7 +39,7 @@ header, .header {
 }
 
 .book-now-button {
-  background-color: var(--accent);
+  background-color: #3e974d;;
   color: var(--text-light);
   font-weight: 600;
   font-size: 1rem;
@@ -52,7 +52,7 @@ header, .header {
 }
 
 .book-now-button:hover {
-  background-color: var(--secondary);
+  background-color: #0ccd42;
   transform: translateY(-2px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }

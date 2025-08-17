@@ -38,6 +38,15 @@ header, .header {
   font-style: normal;
 }
 
+@media (max-width: 900px) {
+  .main-header {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
 .book-now-button {
   background-color: #3e974d;;
   color: var(--text-light);
@@ -52,7 +61,7 @@ header, .header {
 }
 
 .book-now-button:hover {
-  background-color: #0ccd42;
+  background-color: #3e774e;
   transform: translateY(-2px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }

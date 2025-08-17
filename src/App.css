@@ -50,6 +50,6 @@
     font-size: 1.4rem;
     max-width: fit-content;
     text-align: center;
-    max-width: 180px;      /* prevent wrapping too wide */
+    max-width: 600px;      /* prevent wrapping too wide */
   }
 }

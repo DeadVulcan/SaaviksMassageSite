@@ -7,23 +7,27 @@ function Services() {
       <div className="service-list">
         <div className="service-item">
           <h3>Deep Tissue Massage</h3>
-          <p>Target chronic muscle tension and knots using slow, deep strokes to promote long-term relief and improved mobility.</p>
+          <p>Targets chronic muscle tension and knots using slow, deep pressure, combined with trigger point therapy to promote long-term relief and melt pain away.</p>
         </div>
         <div className="service-item">
           <h3>Sports Massage</h3>
-          <p>Ideal for athletes and active individuals to reduce soreness, prevent injury, and improve performance.</p>
+          <p>Ideal for athletes and active individuals to combat soreness, prevent injury, and improve performance.</p>
         </div>
         <div className="service-item">
           <h3>Swedish Relaxation</h3>
           <p>Relax and unwind with long, gliding strokes that reduce stress, improve circulation, and promote deep relaxation.</p>
         </div>
         <div className="service-item">
-          <h3>Mobile Chair Massage</h3>
-          <p>Perfect for events, offices, and quick treatments — focused on upper body tension in a convenient seated position.</p>
+          <h3>Lymphatic Massage</h3>
+          <p>This modalitly targes the lymphnodes and lymphatic capillaries to help drainage, reduce swelling, and promote healing.</p>
         </div>
         <div className="service-item">
-          <h3>Custom Therapeutic Sessions</h3>
-          <p>Personalized treatments combining various techniques to meet your body’s specific needs and goals.</p>
+          <h3>Myofascial Release</h3>
+          <p>Myofascial Release uses slow, sustained pressure on connective tissue to release muscle restrictions, restore balance, and ease chronic discomfort.</p>
+        </div>
+        <div className="service-item">
+          <h3>Full Body Stretch Massage</h3>
+          <p>Through guided, assisted stretches, this massage increases mobility, reduces stiffness, and restores natural alignment.</p>
         </div>
       </div>
     </section>

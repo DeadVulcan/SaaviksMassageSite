@@ -138,3 +138,9 @@ section {
   font-weight: 600;
   opacity: 0.9;
 }
+
+.services .service-list {
+  max-width: 800px;   /* adjust: 600px = narrower, 800px = wider */
+  margin: 0 auto;     /* centers the block */
+  line-height: 1.6;   /* optional: improves readability */
+}

@@ -5,7 +5,7 @@ const About = () => (
     <h2>About</h2>
     <p>
     Maryville Massage Works offers expert deep tissue, sports, myofascial, lymphatic, relaxation, and 
-    neuromuscular massage therapy — now available both at our convenient Maryville location 
+    neuromuscular massage therapy — now available both at our convenient Maryville location, 1004 West Broadway Ave, 
     and through mobile services. Providing relief, recovery, and results for busy professionals 
     and active individuals across East Tennessee for over 10 years.
     </p>

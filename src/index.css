@@ -40,7 +40,7 @@ header, .header {
 
 @media (max-width: 900px) {
   .header h1 {
-    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-size: clamp(1.5rem, 5vw, 10rem);
     max-width: 90%;
     margin: 0 auto;
     text-align: center;

@@ -45,11 +45,11 @@
 }
 
 /* optional small-screen tweak */
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .booking-instructions {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     max-width: fit-content;
-    text-align: center;
+    text-align: left;
     max-width: 600px;      /* prevent wrapping too wide */
   }
 }

@@ -41,7 +41,7 @@ header, .header {
 
 @media (max-width: 1000px) {
   .header h1 {
-    font-size: 1.4;
+    font-size: 1.0;
     max-width: 95%;
     margin: 0 auto;
     text-align: center;

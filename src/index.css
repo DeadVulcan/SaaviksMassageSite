@@ -39,10 +39,10 @@ header, .header {
   font-style: normal;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .header h1 {
-    font-size: 2.4;
-    max-width: 90%;
+    font-size: 1.8;
+    max-width: 95%;
     margin: 0 auto;
     text-align: center;
   }

@@ -1,156 +1,610 @@
-:root {
-  --bg-light: #ddffe4;
-  --primary: #4f8871;
-  --accent: #3e6f77;
-  --secondary: #4ea963;
-  --text-dark: #3C2F2F;
-  --text-light: #FFFFFF;
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  --border-radius: 12px;
+/* =========================================================
+   Maryville Massage Works – Fresh Base Styles
+   - Sticky, glassy header
+   - Calming spa palette (greens)
+   - Accessible focus styles
+   - Responsive navigation & sections
+   ========================================================= */
+
+/* -------- Reset & base tokens ----------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
 }
 
+:root {
+  /* Brand palette (feel free to tweak) */
+  --bg: #f6fbf8; /* page background */
+  --surface: #ffffff; /* cards, panels */
+  --ink: #24322e; /* primary text */
+  --muted: #6e7b76; /* secondary text */
+  --primary: #2f6f62; /* deep jade */
+  --primary-700: #285d53;
+  --secondary: #4ea963; /* soft green accent */
+  --accent: #3e6f77; /* teal-slate */
+  --border: #1b1b1bbd; /* subtle borders */
+  --ring: #a3cfc6; /* focus outline */
+
+  --radius: 14px;
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --container: 1200px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --motion-fast: 0.18s ease;
+    --motion-med: 0.25s ease;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: var(--bg-light);
-  color: var(--text-dark);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
   line-height: 1.6;
 }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-header, .header {
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  padding: 25px 32px;
+h1,
+h2,
+h3 {
+  font-family: Lora, Georgia, serif;
+  line-height: 1.2;
+  color: var(--ink);
+}
+h1 {
+  font-size: clamp(32px, 4.8vw, 56px);
+  margin: 0.2em 0 0.2em;
+}
+h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  margin: 0.6em 0 0.4em;
+}
+h3 {
+  font-size: clamp(18px, 2.2vw, 24px);
+  margin: 0.6em 0 0.4em;
+}
+
+p {
+  margin: 0.4em 0 1em;
+  color: var(--ink);
+  opacity: 0.95;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.9;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 5vw;
+}
+.section {
+  padding: clamp(40px, 6vw, 96px) 0;
+}
+
+/* -------- Accessible helpers ----------------------------------------- */
+.sr-only {
+  position: absolute;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--ring);
+  border-radius: 10px;
+}
+
+/* -------- Sticky glassy header --------------------------------------- */
+
+.site-header {
+  position: fixed;
+  top: env(safe-area-inset-top, 0px);
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #dce4e5f2;
+  border-bottom: 1px solid var(--border);
+}
+.header__inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 14px 5vw;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 16px;
+  align-items: center;
+}
+
+/* Brand */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+}
+.brand__logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.brand__text {
+  display: flex;
+  flex-direction: column;
+}
+.brand__title {
+  font-family: Lora, serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1;
+}
+.brand__subtitle {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+/* Nav */
+.nav-toggle {
+  display: none;
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px;
+  line-height: 0;
+  cursor: pointer;
+}
+.nav-toggle svg {
+  display: block;
+}
+
+.primary-nav {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 18px;
+}
+.nav__list {
+  list-style: none;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.nav__link {
+  font-weight: 600;
+  color: white;
+  opacity: 0.9;
+  border-radius: 8px;
+  justify-content: center;
+  align-content: center;
+}
+.nav__link:hover {
+  opacity: 1;
+}
+
+/* CTA buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: transform var(--motion-fast), filter var(--motion-fast);
+}
+.btn--primary {
+  background: var(--primary);
+  color: #fff;
+}
+.btn--primary:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.book-now-button {
+  margin-left: 6px;
+  border: 2px solid var(--border);
+}
+
+/* Mobile menu */
+.nav-backdrop {
+  display: none;
+}
+@media (max-width: 900px) {
+  .header__inner {
+    grid-template-columns: 1fr auto;
+  }
+  .nav-toggle {
+    display: inline-flex;
+    z-index: 1001;
+  }
+
+  .primary-nav {
+    position: fixed;
+    inset: 0 0 0 auto;
+    margin-top: 92px;
+    width: min(82vw, 360px);
+    transform: translateX(100%);
+    transition: transform var(--motion-med);
+    padding: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .primary-nav.is-open {
+    transform: translateX(0);
+  }
+  .nav__list {
+    flex-direction: column;
+    background: #2f6f62fa;
+  }
+  .nav-backdrop {
+    position: fixed;
+    background: rgba(0, 0, 0, 0);
+    display: block;
+    pointer-events: none;
+  }
+  .nav-backdrop.is-visible {
+    pointer-events: auto;
+  }
+}
+
+/* -------- Hero / Home ----------------------------------------------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+  min-height: 68vh;
+  padding: clamp(48px, 6vw, 88px) 0;
+}
+.hero__content p {
+  max-width: 46ch;
+  font-size: clamp(16px, 2.1vw, 20px);
+}
+.hero__cta {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+.hero__visual {
+  height: min(60vh, 520px);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  background: radial-gradient(
+      1200px 400px at 80% 10%,
+      rgba(47, 111, 98, 0.25),
+      transparent 60%
+    ),
+    radial-gradient(
+      1200px 400px at 10% 90%,
+      rgba(78, 169, 99, 0.18),
+      transparent 60%
+    ),
+    linear-gradient(135deg, #ffffff 0%, #f5f1eb 100%);
+}
+@media (max-width: 920px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .hero__visual {
+    height: 260px;
+  }
+}
+
+/* -------- Services ---------------------------------------------------- */
+.services .cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+.services .card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.services .card h3 {
+  margin-top: 0;
+}
+@media (max-width: 920px) {
+  .services .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -------- Footer ------------------------------------------------------ */
+.footer {
+  background: var(--secondary);
+  color: #fff;
+  padding: 18px;
+  padding-bottom: 96px;
+}
+.footer .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  color: var(--text-light);
-  box-shadow: var(--shadow);
+  gap: 12px;
+}
+.footer a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* -------- Utility ----------------------------------------------------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-weight: 600;
+}
+.muted {
+  color: var(--muted);
+}
+.center {
+  text-align: center;
+}
+
+/* Spacing helpers */
+.mt-0 {
+  margin-top: 0;
+}
+.mt-1 {
+  margin-top: 8px;
+}
+.mt-2 {
+  margin-top: 16px;
+}
+.mt-3 {
+  margin-top: 24px;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.mb-1 {
+  margin-bottom: 8px;
+}
+.mb-2 {
+  margin-bottom: 16px;
+}
+.mb-3 {
   margin-bottom: 24px;
 }
-
-.header h1 {
-  font-size: 3.4rem;
-  text-align: center;
-  margin: 0;
-  flex: 1;
-  font-family: "Lora", serif;
-  font-weight: 400;
-  font-style: normal;
+.mb-4 {
+  margin-bottom: 32px;
 }
 
-@media (max-width: 1000px) {
-  .header h1 {
-    font-size: 1.0;
-    max-width: 95%;
-    margin: 0 auto;
+/* --- 1) Page padding / readability ---------------------------------- */
+main {
+}
+.section {
+  padding: clamp(40px, 6vw, 96px) 0;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5vw;
+}
+
+/* Optional: a little space under the sticky header */
+.site-header {
+  margin-bottom: 8px;
+}
+
+/* --- 3) Clean mobile menu panel -------------------------------------- */
+@media (max-width: 900px) {
+  .primary-nav {
+    padding: 20px 22px;
+  }
+
+  /* --- 2) Hamburger contrast & states ---------------------------------- */
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    background: var(--primary); /* dark green pill */
+    color: #ffffff54; /* SVG uses currentColor */
+    border: none;
+    box-shadow: var(--shadow-sm);
+  }
+  .nav-toggle:hover {
+    filter: brightness(1.05);
+  }
+  .nav-toggle:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--ring);
+  }
+
+  /* When menu is open, invert for a clear state change */
+  .nav-toggle[aria-expanded="true"] {
+    background: #ffffff4f;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+  }
+  /* Bigger, clearer links with separators */
+  .nav__list {
+    width: 100%;
+    gap: 0;
+  }
+
+  .nav__link {
+    pointer-events: auto; /* so taps land here */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 52px;
+    font-size: 1.125rem;
+    border-radius: 8px;
+    pointer-events: auto;
+  }
+
+  .nav__item + .nav__item {
+    border-top: 1px solid var(--border);
+  }
+
+  .nav__item {
+    display: flex;
+    justify-content: center;
     text-align: center;
+  }
+  .primary-nav {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: min(60vw, 360px);
+    transform: translateX(100%);
+    transition: transform var(--motion-med);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .primary-nav.is-open {
+    transform: translateX(0);
+  }
+
+  /* Card-like list of links */
+  .nav__list {
+    border: 2px solid var(--border);
+    gap: 0px;
+
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Make the CTA full-width-ish for easy tapping */
+  .book-now-button {
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0 4px;
+    padding: 12px 16px;
   }
 }
 
-.book-now-button {
-  background-color: #23a31a;;
-  color: var(--text-light);
+/* --- Desktop spacing / logo size tweaks ------------------------------ */
+.brand__logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+}
+.brand__title {
+  font-size: 20px;
+}
+
+.primary-nav {
+  gap: 32px;
+}
+
+.nav__link {
   font-weight: 600;
-  font-size: 1.1rem;
-  text-decoration: none;
-  padding: 14px 28px;
-  border-radius: var(--border-radius);
-  border: 2px solid var(--secondary);
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow);
-}
-
-.book-now-button:hover {
-  background-color: #037d0f;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-}
-
-main {
-
-}
-
-section {
-  margin-bottom: 80px;
-  text-align: center;
-}
-
-.home {
-  background-color: var(--primary);
-  padding: 60px 20px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.home h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.home p {
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: auto;
-}
-
-.contact form {
-  max-width: 600px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.contact input,
-.contact textarea {
-  padding: 16px;
   font-size: 1rem;
-  border-radius: var(--border-radius);
-  border: 1px solid #ccc;
-  background-color: #fff;
-  color: var(--text-dark);
-  box-shadow: var(--shadow);
 }
 
-.contact button {
-  padding: 16px;
+/* Sticky mobile footer CTA — stable centering, no width jump */
+.mobile-cta {
+  position: fixed;
+  /* keep equal insets; browser calculates remaining width */
+  left: max(16px, env(safe-area-inset-left, 0px));
+  right: max(16px, env(safe-area-inset-right, 0px));
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 14px);
+  z-index: 1100;
+  pointer-events: none; /* container ignores taps */
+}
+
+.mobile-cta__button {
+  max-width: 720px; /* cap width for big phones/tablets */
+  margin: 0 auto; /* center within left/right insets */
+  justify-content: center;
+  padding: 14px 16px;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+  pointer-events: auto;
+}
+.nav__link {
+  pointer-events: auto; /* so taps land here */
   font-size: 1rem;
-  background-color: var(--accent);
-  color: var(--text-light);
-  border: none;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow);
+  justify-content: center;
 }
 
-.contact button:hover {
-  background-color: var(--secondary);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+@media (min-width: 901px) {
+  .nav__link {
+    pointer-events: auto; /* so taps land here */
+    font-size: 1rem;
+    border-radius: 32px;
+    padding: 12px;
+    background: #136846d7;
+    border: 2px solid var(--border);
+  }
+
+  .nav__link:hover {
+    background: #11b775d0;
+    transform: translateY(-1px);
+    transition: transform var(--motion-fast), filter var(--motion-fast);
+  }
+  .nav__list {
+    gap: 16px;
+  }
+}
+/* Still hide CTA when the slide-in menu is open */
+html[data-menu-open="true"] .mobile-cta {
+  display: none;
 }
 
-.footer {
-  background-color: var(--secondary);
-  color: var(--text-light);
-  padding: 16px 24px;
-  display: flex;              /* enable side-by-side layout */
-  justify-content: space-between; /* left & right alignment */
-  align-items: center;
-  flex-wrap: wrap;            /* keep it tidy on small screens */
-}
-
-.footer-signature {
-  font-weight: 600;
-  opacity: 0.9;
-}
-
-.services .service-list {
-  max-width: 800px;   /* adjust: 600px = narrower, 800px = wider */
-  margin: 0 auto;     /* centers the block */
-  line-height: 1.6;   /* optional: improves readability */
+.main-container {
+  padding: 0 18px;
+  padding-top: 96px;
 }

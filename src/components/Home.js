@@ -1,4 +1,5 @@
 import React from "react";
+import MobileStickyCTA from "./MobileStickyCTA";
 
 const Home = () => (
   <section className="home">

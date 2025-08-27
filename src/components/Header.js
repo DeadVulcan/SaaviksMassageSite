@@ -18,7 +18,11 @@ const Header = () => {
   return (
     <header className="header site-header" data-aos="zoom-in">
       <div className="header__inner">
-        <a className="brand" href="/" aria-label="Maryville Massage Works home">
+        <a
+          className="brand"
+          href="/#home"
+          aria-label="Maryville Massage Works home"
+        >
           <img
             className="brand__logo"
             src="/logo192.png"

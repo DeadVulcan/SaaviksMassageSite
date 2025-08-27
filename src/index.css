@@ -23,6 +23,7 @@ body {
   /* Brand palette (feel free to tweak) */
   --bg: #f6fbf8; /* page background */
   --surface: #ffffff; /* cards, panels */
+  --scrollbg: #c0d0ccbe; /* cards, panels */
   --ink: #24322e; /* primary text */
   --muted: #6e7b76; /* secondary text */
   --primary: #2f6f62; /* deep jade */
@@ -227,7 +228,7 @@ a:hover {
   color: #fff;
 }
 .btn--primary:hover {
-  filter: brightness(1.06);
+  filter: brightness(1.2);
   transform: translateY(-1px);
 }
 .btn--ghost {
@@ -354,7 +355,7 @@ a:hover {
 
 /* -------- Footer ------------------------------------------------------ */
 .footer {
-  background: var(--secondary);
+  background: #0b3927d6;
   color: #fff;
   padding: 18px;
   padding-bottom: 96px;
@@ -539,6 +540,7 @@ main {
   width: 70px;
   height: 70px;
   border-radius: 10px;
+  filter: brightness(1.1);
 }
 .brand__title {
   font-size: 20px;
@@ -569,11 +571,17 @@ main {
   margin: 0 auto; /* center within left/right insets */
   justify-content: center;
   padding: 14px 16px;
+  background-color: #2f6f6292;
   border: 2px solid var(--border);
   border-radius: 999px;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
   pointer-events: auto;
 }
+
+.mobile-cta__button:hover {
+  background-color: #2f6f62e4;
+}
+
 .nav__link {
   pointer-events: auto; /* so taps land here */
   font-size: 1rem;
@@ -604,7 +612,78 @@ html[data-menu-open="true"] .mobile-cta {
   display: none;
 }
 
+html {
+  scroll-padding-top: 112px; /* adjust to your header’s height */
+}
+
 .main-container {
   padding: 0 18px;
   padding-top: 96px;
+}
+
+/* Position the sections relative so the backgrounds sit behind the content */
+.scroller-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Common pseudo-element for background images */
+.scroller-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.6s ease;
+  opacity: 0.3; /* hidden by default */
+  z-index: -1; /* behind content */
+}
+
+/* When section is in view, fade in its background */
+.scroller-section.in-view::before {
+  opacity: 0.98;
+}
+
+/* Assign images to each section’s pseudo-element */
+.home-section::before {
+  background-image: url("/public/tourpic1.png");
+}
+
+.home {
+  background-color: var(--scrollbg);
+  padding: 32px;
+  border: 1px solid var(--primary);
+  border-radius: 32px;
+}
+
+.services {
+  background-color: var(--scrollbg);
+  padding: 32px;
+  border: 1px solid var(--primary);
+  border-radius: 32px;
+}
+
+.about {
+  background-color: var(--scrollbg);
+  padding: 32px;
+  border: 1px solid var(--primary);
+  border-radius: 32px;
+}
+
+.services-section::before {
+  background-image: url("/public/tourpic2.png");
+}
+
+.about-section::before {
+  background-image: url("/public/tourpic3.png");
+}
+
+/* Adjust padding/height so each section has room for content */
+.scroller-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
 }

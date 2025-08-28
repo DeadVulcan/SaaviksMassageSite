@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import MobileStickyCTA from "./components/MobileStickyCTA";
+import Pricing from "./components/Pricing";
 
 function App() {
   useEffect(() => {
@@ -20,7 +21,7 @@ function App() {
           }
         });
       },
-      { threshold: 0.5 } // Adjust threshold as needed
+      { threshold: 0.25 } // Adjust threshold as needed
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -43,6 +44,11 @@ function App() {
       <section className="scroller-section services-section">
         <div className="main-container">
           <Services />
+        </div>
+      </section>
+      <section className="scroller-section pricing-section">
+        <div className="main-container">
+          <Pricing />
         </div>
       </section>
       <Footer />
